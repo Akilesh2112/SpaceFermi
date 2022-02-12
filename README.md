@@ -14,4 +14,5 @@ A time paradox occurred ... the app is not ready yet
 4. All the changes to the main app logic are made through src/index.js file. Feel free to create separate .js files for additional logic and add them to index.js via `import`
 
 ## Acknowledgements 
-Project config inspired by [Phaser 3 Webpack Project Template](https://github.com/photonstorm/phaser3-project-template) by @photonstorm  
+* Project config inspired by [Phaser 3 Webpack Project Template](https://github.com/photonstorm/phaser3-project-template) by @photonstorm  
+* An analogue counter is based on [Phaser3-analog-counter](https://github.com/jjcapellan/phaser3-analog-counter) by @jjcapellan  
