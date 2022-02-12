@@ -16,3 +16,4 @@ A time paradox occurred ... the app is not ready yet
 ## Acknowledgements 
 * Project config inspired by [Phaser 3 Webpack Project Template](https://github.com/photonstorm/phaser3-project-template) by @photonstorm  
 * An analogue counter is based on [Phaser3-analog-counter](https://github.com/jjcapellan/phaser3-analog-counter) by @jjcapellan  
+* An animated space background from [Outer Space Background](https://codepen.io/NazarTheVis/pen/zqXMqP) by @NazarTheVis
