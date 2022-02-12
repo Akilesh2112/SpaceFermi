@@ -7,9 +7,9 @@ const config = {
   width: 800,
   height: 550,
   transparent: true,
-  scene: {
+  scene: [
     Counter,
-  },
+  ],
 };
 
 const game = new Phaser.Game(config);
