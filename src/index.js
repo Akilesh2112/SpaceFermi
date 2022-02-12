@@ -1,40 +1,40 @@
 import Phaser from 'phaser';
-
-import bomb from './assets/bomb.png';
-import dude from './assets/dude.png';
-import platform from './assets/platform.png';
-import sky from './assets/sky.png';
-import star from './assets/star.png';
+import AnalogCounter from './analog-counter.ts';
 
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: 900,
+  height: 550,
+  backgroundColor: 0x000000,
   scene: {
-    preload,
     create,
-    update,
   },
 };
 
 const game = new Phaser.Game(config);
 
-function preload() {
-  this.load.image('sky', sky);
-  this.load.image('ground', platform);
-  this.load.image('star', star);
-  this.load.image('bomb', bomb);
-  this.load.spritesheet(
-    'dude',
-    dude,
-    { frameWidth: 32, frameHeight: 48 },
-  );
-}
-
 function create() {
-  this.add.image(400, 300, 'sky');
-  this.add.image(400, 300, 'star');
-}
+  const counter = new AnalogCounter(this, 500, 50);
+  const counter1 = new AnalogCounter(this, 200, 125, {
+    backgroundColor:
+      // trying to go transparent
+      '#0000ffff',
+    fontColor: '#ffffff',
+    digits: 3,
+  });
+  const counter2 = new AnalogCounter(this, 200, 200, {
+    duration: 500, backgroundColor: 0x0000cc, fontColor: '#ffffff', digits: 2,
+  });
 
-function update() {
+  counter.setOrigin(0.5);
+
+  counter1.setOrigin(0.5);
+
+  counter2.setOrigin(0.5);
+
+  this.input.on('pointerdown', () => {
+    counter.setNumber(Phaser.Math.Between(10, 999999));
+    counter1.setNumber(Phaser.Math.Between(1, 999));
+    counter2.setNumber(Phaser.Math.Between(1, 99));
+  });
 }
