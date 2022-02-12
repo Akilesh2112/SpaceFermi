@@ -8,11 +8,10 @@ const config = {
   width: 800,
   height: 550,
   transparent: true,
-  scene: {
+  scene: [
     Counter,
-  },
+  ],
 };
 
-const game = new Phaser.Game(config);
 
-calculator(planets.sun, householdObject.pencil);
+const game = new Phaser.Game(config);
