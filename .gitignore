@@ -1,9 +1,17 @@
-
+# Node files
+.package-lock.json
 /node_modules
+
+# Production files
+/dist
+
+# System and IDE files
 *.log
 *.sh
 .idea
 .vscode
 .DS_Store
+
+# Styler configs
 .eslintrc.js
 .prettierrc.js
