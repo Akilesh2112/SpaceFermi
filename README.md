@@ -11,14 +11,18 @@ A time paradox occurred ... the app is not ready yet
 
 ---
 
-#### 🚫
+## Change in importing asserts
+
+ 🚫
 
 ```javascript
   this.load.image('sky', './assets/sky.png');
 ```
 
 <br>
-#### ☑️
+
+ ☑️
+
 ```javascript
 import sky from './assets/sky.png';
 
