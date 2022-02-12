@@ -89,10 +89,10 @@ export default class AnalogCounter {
 
     private getBackground(): Phaser.GameObjects.Graphics {
         let graphics = this.scene.add.graphics();
-        graphics.lineStyle(1, 0x000000, 0.9);
-        graphics.fillStyle(this.backgroundColor, 1);
-        graphics.fillRect(0, 0, this.renderTextureWidth, this.renderTextureHeight);
-        graphics.strokeRect(0, 0, this.renderTextureWidth, this.renderTextureHeight);
+        // graphics.lineStyle(1, 0x000000, 0.9);
+        // graphics.fillStyle(this.backgroundColor, 1);
+        // graphics.fillRect(0, 0, this.renderTextureWidth, this.renderTextureHeight);
+        // graphics.strokeRect(0, 0, this.renderTextureWidth, this.renderTextureHeight);
 
         return graphics;
     }
@@ -102,7 +102,8 @@ export default class AnalogCounter {
     private init() {
 
         this.gap = Math.ceil(this.padding + this.fontSize / 2);
-        this.renderTextureWidth = Math.ceil(this.width / this.digits);
+        this.renderTextureWidth =
+            Math.ceil(this.width / this.digits);
         this.renderTextureHeight = this.height / 2 + 10 * this.gap;
 
         this.initMask();
@@ -119,11 +120,14 @@ export default class AnalogCounter {
     private initDigitsArray() {
         this.digitsArray = [];
         let background = this.getBackground();
-        const style = { fontFamily: 'Arial', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'bold', color: this.fontColor };
+        const style = { fontFamily: 'Helvetica', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'italics', color: this.fontColor, resolution: 1 };
 
         for (let i = 0; i < this.digits; i++) {
             // Create one render texture for each digit
-            let rt = this.scene.add.renderTexture(this.oX + i * this.renderTextureWidth, this.oY, this.renderTextureWidth, this.renderTextureHeight)
+            let rt = this.scene.add.renderTexture(this.oX + i * this.renderTextureWidth, this.oY,
+                this.renderTextureWidth,
+                this.renderTextureHeight
+            )
                 .setOrigin(0);
 
             // Adds background
@@ -165,7 +169,9 @@ export default class AnalogCounter {
     private initMask() {
         this.maskShape = this.scene.make.graphics({})
             .fillStyle(0xffffff)
-            .fillRect(this.oX, this.y, this.width, this.height);
+            .fillRect(this.oX, this.y,
+                this.width, this.height
+            );
         this.mask = this.maskShape.createGeometryMask();
     }
 
