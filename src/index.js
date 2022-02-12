@@ -6,6 +6,7 @@ const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 550,
+  parent: 'phaser',
   transparent: true,
   scene: [
     Counter,
