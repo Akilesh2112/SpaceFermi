@@ -13,7 +13,7 @@ class Counter extends Phaser.Scene {
       height: 200,
       fontColor: '#ffffff',
       // it changes the padding but not the actual font size for digirs
-      fontSize: 64,
+      fontSize: 45,
       shade: 0,
       backgroundColor:
       // trying to go transparent doesnt work
