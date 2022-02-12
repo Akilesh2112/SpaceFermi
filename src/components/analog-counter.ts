@@ -120,7 +120,7 @@ export default class AnalogCounter {
     private initDigitsArray() {
         this.digitsArray = [];
         let background = this.getBackground();
-        const style = { fontFamily: 'Helvetica', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'italics', color: this.fontColor };
+        const style = { fontFamily: 'Helvetica', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'italics', color: this.fontColor, resolution: 1 };
 
         for (let i = 0; i < this.digits; i++) {
             // Create one render texture for each digit
@@ -169,7 +169,9 @@ export default class AnalogCounter {
     private initMask() {
         this.maskShape = this.scene.make.graphics({})
             .fillStyle(0xffffff)
-            .fillRect(this.oX, this.y, this.width, this.height);
+            .fillRect(this.oX, this.y,
+                this.width, this.height
+            );
         this.mask = this.maskShape.createGeometryMask();
     }
 
