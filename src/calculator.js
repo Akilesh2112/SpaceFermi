@@ -20,17 +20,29 @@
     neptune: 1.024E26
   }
 
+// initialize key-value pairs
+  export var values = {
+    outQuotient: 0, 
+    coefficient: 0, 
+    firstnumb: 0,
+    decimals: 0,
+    exponent: 0
+    }
+
 function expo(x, f) {
   return Number.parseFloat(x).toExponential(f);
 }
 
 export function calculator(planets, household_object) {
-    var quotient = expo(planets/household_object,2);
-    var values = {
+    var quotient = expo(planets/household_object,4);
+    values = {
       outQuotient: quotient, 
-      coefficient: quotient.substring(0,4), 
-      exponent: quotient.substring(6,quotient.length)
+      coefficient: parseInt(quotient.substring(0,6)), 
+      firstnumb: parseInt(quotient.substring(0,1)),
+      decimals: parseInt(quotient.substring(2,6)),
+      exponent: parseInt(quotient.substring(7,quotient.length))
     }
     console.log(values);
     return values;
   }
+
