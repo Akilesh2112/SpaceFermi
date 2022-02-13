@@ -167,14 +167,8 @@ summary {
     animation: move-twink-back 200s linear infinite;
 }
 
-.clouds {
-    z-index: 2;
-    background: transparent url("https://image.ibb.co/bT4N7T/clouds.png") repeat top center;
-    animation: move-clouds-back 200s linear infinite;
-}
-
 /*setting up the position for the div that holds Phaser canvas*/
-.phaser {
+.content {
     z-index: 3;
     position: absolute;
 }

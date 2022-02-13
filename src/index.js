@@ -51,7 +51,7 @@ const config = {
   },
   scene: {
     preload,
-    create,
+    // create,
   },
 };
 
