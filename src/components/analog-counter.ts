@@ -102,8 +102,7 @@ export default class AnalogCounter {
     private init() {
 
         this.gap = Math.ceil(this.padding + this.fontSize / 2);
-        this.renderTextureWidth =
-            Math.ceil(this.width / this.digits);
+        this.renderTextureWidth = Math.ceil(this.width / this.digits);
         this.renderTextureHeight = this.height / 2 + 10 * this.gap;
 
         this.initMask();
@@ -120,7 +119,10 @@ export default class AnalogCounter {
     private initDigitsArray() {
         this.digitsArray = [];
         let background = this.getBackground();
-        const style = { fontFamily: 'Helvetica', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'italics', color: this.fontColor, resolution: 1 };
+        const style = {
+            fontFamily: 'Arial', fontSize: (new Number(this.fontSize)).toString(), fontStyle: 'bold', color: this.fontColor,
+            // resolution: 1
+        };
 
         for (let i = 0; i < this.digits; i++) {
             // Create one render texture for each digit
