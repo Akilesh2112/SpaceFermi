@@ -8,7 +8,10 @@ module.exports = {
     path: path.resolve( __dirname, 'dist' ),
     filename: 'main.js'
   },
-  plugins: [ new HtmlWebpackPlugin() ],
+  plugins: [ new HtmlWebpackPlugin( {
+    title: "test",
+    template: './src/index.html'
+  } ) ],
   devServer: {
     static: {
       directory: path.join( __dirname, "dist" )
@@ -20,9 +23,29 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [ { loader: "style-loader" }, { loader: "css-loader" } ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: "babel-loader"
+      },
+      {
+        test: [ /\.vert$/, /\.frag$/ ],
+        use: "raw-loader"
+      },
+      {
         test: /\.(gif|png|jpe?g|svg|xml)$/i,
         use: "file-loader"
       }
-    ],
+    ]
   }
 };
