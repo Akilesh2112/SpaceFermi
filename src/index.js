@@ -3,15 +3,19 @@ import './style.css';
 import Counter from './scenes/counter';
 import { calculator, householdObject, planets } from './calculator';
 
-const config = {
-  type: Phaser.AUTO,
-  width: 800,
-  height: 550,
-  parent: 'phaser',
-  transparent: true,
-  scene: [
-    Counter,
-  ],
+var config = {
+    type: Phaser.AUTO,
+    parent: "phaser-example",
+    width: 800,
+    height: 600,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+
+    scene: Demo,
+    backgroundColor: 0x33333
 };
 
-const game = new Phaser.Game(config);
+
+var game = new Phaser.Game(config);
