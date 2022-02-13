@@ -11,7 +11,7 @@ class Counter extends Phaser.Scene {
       // is 1000 the max value? 3000 doesnt change anything
       width: 200,
       height: 200,
-      fontColor: '#ffffff',
+      fontColor: '#234fw',
       // it changes the padding but not the actual font size for digirs
       fontSize: 45,
       shade: 0,
