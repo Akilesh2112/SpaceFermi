@@ -41,7 +41,7 @@ const config = {
     // makes the canvas stay in the center
     // autoCenter: Phaser.Scale.Center.CENTER_BOTH,
   },
-  parent: 'phaser',
+  parent: 'bucket',
   transparent: true,
   physics: {
     default: 'arcade',
