@@ -167,10 +167,15 @@ summary {
     animation: move-twink-back 200s linear infinite;
 }
 
-/*setting up the position for the div that holds Phaser canvas*/
 .content {
     z-index: 3;
     position: absolute;
+    color: white;
+    font-size: xx-large;
+}
+
+.button {
+    font-size: xx-large;
 }
 
 @keyframes move-twink-back {
