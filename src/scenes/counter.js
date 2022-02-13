@@ -23,10 +23,10 @@ class Counter extends Phaser.Scene {
 
     this.add.text(0, 0, 'Hello World', { font: '"Press Start 2P"' });
 
-    // counter.setOrigin(0.5);
-    // this.input.on('pointerdown', () => {
-    //   counter.setNumber(Phaser.Math.Between(10, 999999));
-    // });
+    counter.setOrigin(0.5);
+    this.input.on('pointerdown', () => {
+      counter.setNumber(Phaser.Math.Between(10, 999999));
+    });
   }
 }
 
