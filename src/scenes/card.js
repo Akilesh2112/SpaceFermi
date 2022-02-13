@@ -1,9 +1,7 @@
 export default class Options extends Phaser.Scene {
-    listener
 
-    constructor(listener) {
+    constructor() {
         super({ key: 'sliders' });
-        this.listener = listener;
     }
 
     preload() {
@@ -26,7 +24,6 @@ export default class Options extends Phaser.Scene {
         themes.push(this.add.sprite(0, 0, 'theme4'));
         themes.push(this.add.sprite(0, 0, 'theme5'));
         themes.push(this.add.sprite(0, 0, 'theme6'));
-        console.log(themes);
         //number of themes
         var totalThemes = themes.length;
 
@@ -40,13 +37,13 @@ export default class Options extends Phaser.Scene {
             //check if there is another theme available to display on the right side; if yes then position it
             if (prime < (totalThemes - 1)) {
                 themes[prime + 1].x = width / 2 + 67 + 75;
-                themes[prime + 1].scale.setTo(0.5, 0.5);
+                themes[prime + 1].setScale(0.5, 0.5);
             }
 
             //check if there is another theme available to display on the left side; if yes then position it
             if (prime > 0) {
                 themes[prime - 1].x = width / 2 - 67 - 75;
-                themes[prime - 1].scale.setTo(0.5, 0.5);
+                themes[prime - 1].setScale(0.5, 0.5);
             }
         }
 
@@ -72,7 +69,7 @@ export default class Options extends Phaser.Scene {
             item.x = width + 150;
             item.y = height / 2;
             item.inputEnabled = true;
-            item.addListener(, clickListener, listener);
+            item.on('pointdown', clickListener, this);
         })
 
         //set initial state
