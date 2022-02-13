@@ -143,6 +143,45 @@ summary {
     display: block;
 }
 
+.content {
+    display: grid;
+    grid-template-columns: max-content;
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    z-index: 3;
+    color: white;
+    font-size: xx-large;
+}
+
+.top {
+    grid-column: 3 / 3;
+    grid-row: 1;
+}
+
+.middle {
+    grid-column: 3 / 3;
+    grid-row: 2;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.center {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.button {
+    font-size: xx-large;
+}
+
 .stars,
 .twinkling,
 .clouds {
@@ -157,26 +196,16 @@ summary {
 }
 
 .stars {
-    z-index: 0;
+    z-index: -2;
     background: #000 url("https://image.ibb.co/mjnygo/stars.png") repeat top center;
 }
 
 .twinkling {
-    z-index: 1;
+    z-index: -1;
     background: transparent url("https://image.ibb.co/ir1DE8/twinkling.png") repeat top center;
     animation: move-twink-back 200s linear infinite;
 }
 
-.content {
-    z-index: 3;
-    position: absolute;
-    color: white;
-    font-size: xx-large;
-}
-
-.button {
-    font-size: xx-large;
-}
 
 @keyframes move-twink-back {
     from {
